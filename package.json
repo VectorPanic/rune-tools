@@ -1,0 +1,88 @@
+{
+  "name": "rune-tools",
+  "version": "2.0.0",
+  "description": "A command line interface (CLI) program for creating and managing Rune-based applications.",
+  "bin": {
+    "rune-tools": "bin/rune-tools.js"
+  },
+  "scripts": {
+    "test": "node bin/rune-tools.js"
+  },
+  "author": "Henrik Andersen <henrik@vectorpanic.com>",
+  "license": "MIT",
+  "template": {
+    "folders": [
+      "/asset/",
+      "/bin/",
+      "/bin-debug/",
+      "/lib/",
+      "/scripts/shell",
+      "/src/data/resource/",
+      "/src/scene/game/",
+      "/src/scope/",
+      "/src/system/"
+    ],
+    "files": [
+      {
+        "src": "../../asset/tpl/Alias.tpl",
+        "dst": "/src/scope/Alias.js"
+      },
+      {
+        "src": "../../asset/tpl/bootstrap.tpl",
+        "dst": "/bin/bootstrap.js"
+      },
+      {
+        "src": "../../asset/tpl/bootstrap.tpl",
+        "dst": "/bin-debug/bootstrap.js"
+      },
+      {
+        "src": "../../asset/tpl/build_sh.tpl",
+        "dst": "/scripts/shell/build.sh"
+      },
+      {
+        "src": "../../asset/tpl/Game.tpl",
+        "dst": "/src/scene/game/Game.js"
+      },
+      {
+        "src": "../../asset/tpl/index_bin.tpl",
+        "dst": "/bin/index.html"
+      },
+      {
+        "src": "../../asset/tpl/index_debug.tpl",
+        "dst": "/bin-debug/index.html"
+      },
+      {
+        "src": "../../asset/tpl/Main.tpl",
+        "dst": "/src/system/Main.js"
+      },
+      {
+        "src": "../../asset/tpl/make_sh.tpl",
+        "dst": "/scripts/shell/make.sh"
+      },
+      {
+        "src": "../../asset/tpl/Manifest.tpl",
+        "dst": "/src/scope/Manifest.js"
+      },
+      {
+        "src": "../../asset/tpl/package.tpl",
+        "dst": "/package.json"
+      },
+      {
+        "src": "../../asset/tpl/Requests.tpl",
+        "dst": "/src/data/resource/Requests.js"
+      },
+      {
+        "src": "../../asset/tpl/rune.tpl",
+        "dst": "/lib/rune.js"
+      },
+      {
+        "src": "../../asset/tpl/style.tpl",
+        "dst": "/bin/style.css"
+      },
+      {
+        "src": "../../asset/tpl/style.tpl",
+        "dst": "/bin-debug/style.css"
+      }
+    ]
+  }
+}

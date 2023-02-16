@@ -1,0 +1,8 @@
+# SYSTEM FILES
+.DS_Store
+
+# IDE FILES
+.nova
+
+# NPM
+node_modules
