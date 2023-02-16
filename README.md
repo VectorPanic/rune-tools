@@ -20,8 +20,12 @@ Rune-tools contains three subcommands:
 
 ## Installation
 
-Download the source code and use `npm link` to create a symlink from rune-tools to npm's global folder. Example:
+```bash
+npm install -g rune-tools
+```
+
+Or download the [source code](https://github.com/VectorPanic/rune-tools) and use `npm link` to create a symlink from rune-tools to npm's global folder. Example:
 
 ```bash
-$ npm link ./rune-tools
+npm link ./rune-tools
 ```
