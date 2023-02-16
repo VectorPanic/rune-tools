@@ -1,6 +1,6 @@
 module.exports = function(args) {
     const print = require('./../util/print');
-    const URL = 'https://raw.githubusercontent.com/VectorPanic/rune/main/dist/rune.js';
+    const URL = 'https://raw.githubusercontent.com/VectorPanic/rune-sdk/main/dist/rune.js';
     
     print.out('Downloading.', false);
     
