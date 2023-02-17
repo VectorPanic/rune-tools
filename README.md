@@ -20,6 +20,8 @@ Rune-tools contains three subcommands:
 
 ## Installation
 
+Install with npm:
+
 ```bash
 npm install -g rune-tools
 ```
@@ -28,4 +30,26 @@ Or download the [source code](https://github.com/VectorPanic/rune-tools) and use
 
 ```bash
 npm link ./rune-tools
+```
+
+## Example
+
+The following command *creates* a new project folder named `MyApp`, by developer `com.example` of version `1.0.0`.
+
+```bash
+rune-tools create -a MyApp -d com.example -b 1.0.0
+```
+
+Then navigate into the `MyApp` directory and run `npm update` to download the *Electron* dependency. Use `npm test` to run the `MyApp` project:
+
+```bash
+cd ./MyApp
+npm update
+npm test
+```
+
+To update to the latest build of Rune (SDK), run the following command:
+
+```bash
+rune-tools update
 ```
