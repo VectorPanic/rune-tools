@@ -1,6 +1,6 @@
 {
   "name": "rune-tools",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A command line interface (CLI) program for creating and managing Rune-based applications.",
   "bin": {
     "rune-tools": "bin/rune-tools.js"
