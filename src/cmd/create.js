@@ -1,12 +1,38 @@
 module.exports = function(args) {
+    
+    const aID = /^[a-zA-Z0-9-_]*$/;
+    const dID = /^([a-z]{2,3}).[a-z0-9-]{1,50}$/;
+    const bID = /^[0-9].[0-9].[0-9]$/;
+    
+    let a = args.a || args.app;
+    let d = args.d || args.developer;
+    let b = args.b || args.build;
+    
+    const print = require('./../util/print');
+    
+    if (!aID.test(a) || !a) {
+        print.err('Invalid App-ID.', true);
+    }
+    
+    if (a.toLowerCase() == "app") {
+        print.err('Invalid App-ID, "app" is not allowed.', true);
+    }
+    
+    if (!dID.test(d) || !d) {
+        print.err('Invalid Developer-ID.', true);
+    }
+    
+    if (!bID.test(b) || !b) {
+        print.err('Invalid Build-ID.', true);
+    }
+    
     const path = require('path');
-    const title = String(args.app || args.a || 'app');
-    const root = path.join(process.cwd(), title);
+    const root = path.join(process.cwd(), a);
     
     createFolders(root);
     createFiles(args);
     
-    require('./../util/print').out('Done.', true);
+    print.out('Done.', true);
 };
 
 function createFolders(root) {
@@ -65,7 +91,7 @@ function createFile(file, args) {
 
 function trim(str, args) {
     str = str.replace(/%DEVELOPER%/g, args.developer || args.d || '');
-    str = str.replace(/%APP%/g,       args.app       || args.a || 'app');
+    str = str.replace(/%APP%/g,       args.app       || args.a || 'myapp');
     str = str.replace(/%BUILD%/g,     args.build     || args.b || '0.0.0');
     str = str.replace(/%REQUESTS%/g, '');
     
