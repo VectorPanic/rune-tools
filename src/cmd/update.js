@@ -1,3 +1,10 @@
+/**
+ * Downloads the SDK build from its main branch into the current project's lib/rune.js.
+ * Exits with a failure status if the directory is not recognized as a Rune project.
+ *
+ * @param {Object} args Parsed CLI arguments; unused by this command.
+ * @returns {undefined}
+ */
 module.exports = function(args) {
     const print = require('./../util/print');
     const URL = 'https://raw.githubusercontent.com/VectorPanic/rune-sdk/main/dist/rune.js';
@@ -13,6 +20,11 @@ module.exports = function(args) {
     } else print.err('Invalid directory.', true);
 };
 
+/**
+ * Checks for the Main.js and lib paths used to recognize a Rune project root.
+ *
+ * @returns {boolean} Whether both paths exist in the current directory.
+ */
 function isRootDir() {
     const fs = require('fs');
     const path = require('path');
@@ -27,6 +39,15 @@ function isRootDir() {
     return false;
 }
 
+/**
+ * Downloads a UTF-8 SDK file over HTTPS and writes it after an HTTP 200 response.
+ * Exits with a failure status for other HTTP response codes.
+ *
+ * @param {string} src HTTPS URL to download.
+ * @param {string} dst Destination file path.
+ * @param {function(?Error): void} clb Called after writing with the filesystem error, or null on success.
+ * @returns {undefined}
+ */
 function fetch(src, dst, clb) {
     const print = require('./../util/print');
     const fs = require('fs');

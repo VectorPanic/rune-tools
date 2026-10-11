@@ -1,3 +1,9 @@
+/**
+ * Collects project assets and regenerates the application's resource request class.
+ *
+ * @param {Object} args Parsed CLI options; r or resource selects file references instead of Base64.
+ * @returns {undefined}
+ */
 module.exports = function(args) {
     const path = require('path');
     const root = path.join(process.cwd(), '/asset');
@@ -8,6 +14,13 @@ module.exports = function(args) {
     print.out('Done.', false);
 };
 
+/**
+ * Recursively collects supported image, audio, JSON and XML files.
+ * Exits with a failure status if a directory cannot be read.
+ *
+ * @param {string} root Absolute directory path to scan.
+ * @returns {string[]} Absolute paths of supported resource files.
+ */
 function getFiles(root) {
     const fs = require("fs");
     const path = require("path");
@@ -36,6 +49,13 @@ function getFiles(root) {
     return files;
 }
 
+/**
+ * Converts resource files to relative references or Base64 data URIs.
+ *
+ * @param {string[]} files Absolute resource file paths.
+ * @param {Object} args Parsed options controlling resource representation.
+ * @returns {Array<{name: string, data: string}>} Resource names and their encoded data or references.
+ */
 function encode(files, args) {
     const path = require('path');
     const fs = require("fs");
@@ -67,6 +87,12 @@ function encode(files, args) {
     return output;
 }
 
+/**
+ * Resolves a file extension to its MIME type, using a binary fallback for unknown types.
+ *
+ * @param {string} ext File extension, with or without a leading dot.
+ * @returns {string} MIME type associated with the extension.
+ */
 function mime(ext) {
     ext = ext.trim().toLowerCase().replace( /^\.+/, '');
     switch (ext) {
@@ -97,6 +123,12 @@ function mime(ext) {
     }
 }
 
+/**
+ * Generates resource registration statements for the Requests class.
+ *
+ * @param {Array<{name: string, data: string}>} files Prepared resource entries.
+ * @returns {string} JavaScript statements calling this.add for each resource.
+ */
 function getSyntax(files) {
     let tpl = 'this.add("%APP%", "%DATA%");\n\t';
     let str = '';
@@ -114,6 +146,13 @@ function getSyntax(files) {
     return str;
 }
 
+/**
+ * Renders Requests.tpl using the project package name and overwrites Requests.js.
+ * Exits with a failure status if the template cannot be read or the output cannot be written.
+ *
+ * @param {string} dat Generated resource registration statements.
+ * @returns {undefined}
+ */
 function save(dat) {
     const fs = require('fs');
     const path = require('path');

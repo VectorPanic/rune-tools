@@ -1,3 +1,8 @@
+/**
+ * Parses process arguments and dispatches the selected CLI command.
+ *
+ * @returns {undefined}
+ */
 module.exports = function() {
     const args = require('./util/args')(process.argv.slice(2));
     let cmd = args._[0];

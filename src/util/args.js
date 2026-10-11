@@ -1,3 +1,10 @@
+/**
+ * Parses positional arguments and short or long options with separated or equals values.
+ * Boolean flags do not consume the following argument. Positional arguments are stored in `_`.
+ *
+ * @param {string[]} a Command-line arguments, excluding the Node executable and script path.
+ * @returns {Object<string, (string|boolean|string[])>} Parsed options and positional arguments.
+ */
 module.exports = function(a) {
     const booleans = new Set(['h', 'help', 'v', 'version', 'r', 'resource']);
     let o = {'_':[]};

@@ -1,3 +1,9 @@
+/**
+ * Prints CLI usage, supported commands and examples.
+ *
+ * @param {Object} args Parsed CLI arguments; unused by this command.
+ * @returns {undefined}
+ */
 module.exports = function(args) {
     const print = require('./../util/print');
     print.out('NAME');
