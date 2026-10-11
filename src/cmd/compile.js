@@ -71,6 +71,7 @@ function mime(ext) {
     ext = ext.trim().toLowerCase().replace( /^\.+/, '');
     switch (ext) {
         case 'jpg':
+        case 'jpeg':
         return 'image/jpeg';
         
         case 'png':
