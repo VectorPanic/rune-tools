@@ -1,6 +1,6 @@
 {
   "name": "%APP%",
-  "version": "%VERSION%",
+  "version": "%BUILD%",
   "description": "An awesome Rune-based application.",
   "main": "bin/bootstrap.js",
   "directories": {
