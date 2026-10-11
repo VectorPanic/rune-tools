@@ -16,6 +16,18 @@
 %APP%.scene.Game = function() {
 
     //--------------------------------------------------------------------------
+    // Private properties
+    //--------------------------------------------------------------------------
+
+    /**
+     * The scene's Hello World text field.
+     *
+     * @type {rune.text.BitmapField}
+     * @private
+     */
+    this.m_text = null;
+
+    //--------------------------------------------------------------------------
     // Super call
     //--------------------------------------------------------------------------
     
@@ -45,11 +57,11 @@
 %APP%.scene.Game.prototype.init = function() {
     rune.scene.Scene.prototype.init.call(this);
     
-    var text = new rune.text.BitmapField("Hello World!");
-    text.autoSize = true;
-    text.center = this.application.screen.center;
+    this.m_text = new rune.text.BitmapField("Hello World!");
+    this.m_text.autoSize = true;
+    this.m_text.center = this.application.screen.center;
     
-    this.stage.addChild(text);
+    this.stage.addChild(this.m_text);
 };
 
 /**
@@ -74,4 +86,5 @@
  */
 %APP%.scene.Game.prototype.dispose = function() {
     rune.scene.Scene.prototype.dispose.call(this);
+    this.m_text = null;
 };
