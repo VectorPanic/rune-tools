@@ -16,13 +16,13 @@ module.exports = function(args) {
     print.out('\t\tCreates new project.');
     print.out('\t\t\t-d, --developer[=DEVELOPER]');
     print.out('\t\t\t\tDeveloper ID, example: com.vectorpanic');
-    print.out('\t\t\t-a, --app[=APP]');
+    print.out('\t\t\t-a, --application[=APP]');
     print.out('\t\t\t\tApp ID, for example: MyApp');
     print.out('\t\t\t-b, --build[=BUILD]');
     print.out('\t\t\t\tBuild version, example: 1.0.0');
     print.out('\tcompile');
     print.out('\t\tCompiles resource files.');
-    print.out('\t\t\t-r, --reference');
+    print.out('\t\t\t-r, --resource');
     print.out('\t\t\t\tUse URI, not Base64.');
     print.out('\tupdate');
     print.out('\t\tUpdate to the latest build of Rune.');

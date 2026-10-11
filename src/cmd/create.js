@@ -4,7 +4,7 @@ module.exports = function(args) {
     const dID = /^([a-z]{2,3}).[a-z0-9-]{1,50}$/;
     const bID = /^[0-9].[0-9].[0-9]$/;
     
-    let a = args.a || args.app;
+    let a = args.a || args.application;
     let d = args.d || args.developer;
     let b = args.b || args.build;
     
@@ -75,7 +75,7 @@ function createFile(file, args) {
     const path = require('path');
     
     const src = path.join(__dirname, file.src);
-    const dst = path.join(process.cwd(), (args.app || args.a || 'app'), file.dst);
+    const dst = path.join(process.cwd(), (args.application || args.a || 'app'), file.dst);
     
     try {
         if (fs.existsSync(dst) == false) {
@@ -91,7 +91,7 @@ function createFile(file, args) {
 
 function trim(str, args) {
     str = str.replace(/%DEVELOPER%/g, args.developer || args.d || '');
-    str = str.replace(/%APP%/g,       args.app       || args.a || 'myapp');
+    str = str.replace(/%APP%/g,       args.application || args.a || 'myapp');
     str = str.replace(/%BUILD%/g,     args.build     || args.b || '0.0.0');
     str = str.replace(/%REQUESTS%/g, '');
     

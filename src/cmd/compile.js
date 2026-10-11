@@ -45,7 +45,7 @@ function encode(files, args) {
     files.forEach(function(file) {
         let str;
         
-        if (args.r || args.reference) {
+        if (args.r || args.resource) {
             str = './../asset' + file.split('asset').pop();
             require('./../util/print').out(' -- ' + str, false);
         } else {
