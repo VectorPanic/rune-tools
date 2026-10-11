@@ -14,6 +14,8 @@ module.exports = function(args) {
     print.out('COMMAND');
     print.out('\tadd sprite APPLICATION.PACKAGE.CLASS');
     print.out('\t\tCreates a Sprite class in the current directory.');
+    print.out('\tadd scene APPLICATION.PACKAGE.CLASS');
+    print.out('\t\tCreates a Scene class in the current directory.');
     print.out('\tcreate');
     print.out('\t\tCreates new project.');
     print.out('\t\t\t-d, --developer[=DEVELOPER]');
@@ -30,6 +32,7 @@ module.exports = function(args) {
     print.out('\t\tUpdate to the latest build of Rune.');
     print.out('EXAMPLE');
     print.out('\t$ rune-tools add sprite mygame.mypackage.Player');
+    print.out('\t$ rune-tools add scene mygame.mypackage.Scene');
     print.out('\t$ rune-tools --version');
     print.out('\t$ rune-tools update');
     print.out('\t$ rune-tools create -d com.vectorpanic.demo -a demo -b 0.0.0');

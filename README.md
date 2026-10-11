@@ -10,8 +10,9 @@ rune-tools can be executed with two possible flags:
 
 Rune-tools contains four subcommands:
 
-- `add sprite APPLICATION.PACKAGE.CLASS`: Creates a Sprite class from a template in the current directory.
+- `add <sprite|scene> APPLICATION.PACKAGE.CLASS`: Creates a Sprite or Scene class from a template in the current directory.
   For example, `rune-tools add sprite mygame.mypackage.Player` creates `Player.js`.
+  Use `rune-tools add scene mygame.mypackage.Scene` to create `Scene.js`.
   Nested packages are supported, and existing files are never overwritten.
   Define the namespace and add the file to your project's loading and build lists before using the class.
 - `create [-a=APP] [-d=DEV] [-b=BUILD]`: Create new projects. This includes tedious tasks such as creating folders and file structures.

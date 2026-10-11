@@ -2,16 +2,20 @@ module.exports = function(args) {
     const print = require('./../util/print');
     const type = args._[1];
     const reference = args._[2];
+    const templates = {
+        sprite: 'Sprite.tpl',
+        scene: 'Scene.tpl'
+    };
 
-    if (args._.length !== 3 || type !== 'sprite') {
-        print.err('Use: rune-tools add sprite APPLICATION.PACKAGE.CLASS', true);
+    if (args._.length !== 3 || !Object.prototype.hasOwnProperty.call(templates, type)) {
+        print.err('Use: rune-tools add <sprite|scene> APPLICATION.PACKAGE.CLASS', true);
     }
 
     if (!isClassReference(reference)) {
         print.err('Invalid class reference. Use: APPLICATION.PACKAGE.CLASS', true);
     }
 
-    createFile(reference);
+    createFile(templates[type], reference);
 
     print.out('Done.', true);
 };
@@ -33,13 +37,13 @@ function isClassReference(reference) {
     }) && !reserved.includes(parts[0]);
 }
 
-function createFile(reference) {
+function createFile(template, reference) {
     const fs = require('fs');
     const path = require('path');
     const print = require('./../util/print');
     const parts = reference.split('.');
     const name = parts[parts.length - 1];
-    const src = path.join(__dirname, '../../asset/tpl/Sprite.tpl');
+    const src = path.join(__dirname, '../../asset/tpl', template);
     const dst = path.join(process.cwd(), name + '.js');
 
     try {
