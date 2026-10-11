@@ -10,7 +10,7 @@
         <!-- APPLICATION SOURCE CODE -->
         <script src="./../src/scope/Manifest.js"></script>
         <script src="./../src/data/resource/Requests.js"></script>
-        <script src="./../src/scene/game/Game.js"></script>
+        <script src="./../src/scene/Game.js"></script>
         <script src="./../src/system/Main.js"></script>
         <script src="./../src/scope/Alias.js"></script>
         

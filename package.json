@@ -18,7 +18,7 @@
       "/lib/",
       "/scripts/shell",
       "/src/data/resource/",
-      "/src/scene/game/",
+      "/src/scene/",
       "/src/scope/",
       "/src/system/"
     ],
@@ -41,7 +41,7 @@
       },
       {
         "src": "../../asset/tpl/Game.tpl",
-        "dst": "/src/scene/game/Game.js"
+        "dst": "/src/scene/Game.js"
       },
       {
         "src": "../../asset/tpl/index_bin.tpl",
