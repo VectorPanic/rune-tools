@@ -8,8 +8,12 @@ rune-tools can be executed with two possible flags:
 - `rune-tools --help`: To print the man page.
 - `rune-tools --version`: To print current version of rune-tools.
 
-Rune-tools contains three subcommands:
+Rune-tools contains four subcommands:
 
+- `add sprite APPLICATION.PACKAGE.CLASS`: Creates a Sprite class from a template in the current directory.
+  For example, `rune-tools add sprite mygame.mypackage.Player` creates `Player.js`.
+  Nested packages are supported, and existing files are never overwritten.
+  Define the namespace and add the file to your project's loading and build lists before using the class.
 - `create [-a=APP] [-d=DEV] [-b=BUILD]`: Create new projects. This includes tedious tasks such as creating folders and file structures.
   - `-a, --application`: App-ID, example: `myApp`.
   - `-d, --developer`: Developer-ID, example: `vectorpanic`.

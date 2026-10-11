@@ -13,6 +13,9 @@ module.exports = function() {
     }
     
     switch (cmd) {
+        case 'add':
+            require('./cmd/add')(args);
+            break;
         case 'compile':
             require('./cmd/compile')(args);
             break;
