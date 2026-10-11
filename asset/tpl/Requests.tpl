@@ -2,8 +2,8 @@
 // Constructor scope
 //------------------------------------------------------------------------------
 
-/** 
- * Creates a new Requests object.
+/**
+ * Creates the application's resource request collection.
  * 
  * @constructor
  * @extends rune.resource.Requests
@@ -11,9 +11,8 @@
  * @class
  * @classdesc
  * 
- * This class includes (bakes) resource files used by the application. A 
- * resource file is made available by reference (URI) or base64-encoded string. 
- * Tip: Use Rune-tools to easily bake resource files into this class.
+ * Registers application resources as file references or Base64 data URIs.
+ * Rune-tools compile generates the resource entries in this class.
  */
 %APP%.data.Requests = function() {
 
@@ -22,7 +21,7 @@
     //--------------------------------------------------------------------------
     
     /**
-     * Extend rune.resource.Requests
+     * Initializes the base Requests class.
      */
     rune.resource.Requests.call(this);
 };
@@ -39,7 +38,11 @@
 //------------------------------------------------------------------------------
 
 /**
- * @inheritDoc
+ * Initializes the base request collection and registers application resources.
+ *
+ * @override
+ * @protected
+ * @returns {undefined}
  */
 %APP%.data.Requests.prototype.m_construct = function() {
     rune.resource.Requests.prototype.m_construct.call(this);

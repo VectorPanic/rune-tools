@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------------
 
 /**
- * The application namespace.
+ * Defines the application namespace and its data, scene and system packages.
  * 
  * @namespace %APP%
  */
@@ -14,7 +14,7 @@ var %APP% = function() {
     //--------------------------------------------------------------------------
     
     /**
-     * Public scope.
+     * Collects the packages exposed by the application namespace.
      *
      * @type {Object}
      * @private
@@ -26,9 +26,7 @@ var %APP% = function() {
     //--------------------------------------------------------------------------
     
     /**
-     * This package contains classes that represent data, or that are used to 
-     * manage data. Data can consist of concrete information, or of raw data 
-     * such as resource files.
+     * Contains application data and resource registration classes.
      *
      * @namespace data
      * @memberof %APP%
@@ -37,9 +35,7 @@ var %APP% = function() {
     m_this.data = {};
     
     /**
-     * This package includes the scenes that make up the application. Scenes 
-     * are used to represent graphical parts (also known as views) of an 
-     * application.
+     * Contains scenes that define the application's views and game logic.
      *
      * @namespace scene
      * @memberof %APP%
@@ -48,7 +44,7 @@ var %APP% = function() {
     m_this.scene = {};
 
     /**
-     * This package contains the application's most vital classes.
+     * Contains the entry point and other application-level classes.
      *
      * @namespace system
      * @memberof %APP%
@@ -61,7 +57,7 @@ var %APP% = function() {
     //--------------------------------------------------------------------------
 
     /**
-     * Public scope.
+     * Exposes the assembled application namespace.
      */
     return m_this;
 }();
@@ -71,9 +67,10 @@ var %APP% = function() {
 //------------------------------------------------------------------------------
 
 /**
- * The secret bootstrap. This method enables simple startup of the application, 
- * without knowledge of the internal package structure or the classes included 
- * in it.
+ * Creates and starts the application, then returns its entry point instance.
+ *
+ * @param {Function} [callback] Called when application startup is complete.
+ * @returns {%APP%.system.Main} The application instance being started.
  *
  * @ignore
  */

@@ -3,14 +3,15 @@
 //------------------------------------------------------------------------------
 
 /**
- * Creates a new instance of the Main class.
+ * Creates the application's entry point with its initial configuration.
  *
  * @constructor
+ * @extends rune.system.Application
  * 
  * @class
  * @classdesc
  * 
- * Entry point class.
+ * Configures the initial scene, resources, input devices and game loop.
  */
 %APP%.system.Main = function() {
 
@@ -19,7 +20,7 @@
     //--------------------------------------------------------------------------
     
     /**
-     * Extend (Rune) Application.
+     * Initializes the base Application class with this project's settings.
      */
     rune.system.Application.call(this, {
         developer: "%DEVELOPER%",

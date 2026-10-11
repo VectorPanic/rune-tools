@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------------
 
 /**
- * Creates a new object.
+ * Creates the application's initial game scene.
  *
  * @constructor
  * @extends rune.scene.Scene
@@ -11,7 +11,7 @@
  * @class
  * @classdesc
  * 
- * Game scene.
+ * Displays a centered Hello World text field as a starting point for gameplay.
  */
 %APP%.scene.Game = function() {
 
@@ -32,7 +32,7 @@
     //--------------------------------------------------------------------------
     
     /**
-     * Calls the constructor method of the super class.
+     * Initializes the base Scene class.
      */
     rune.scene.Scene.call(this);
 };
@@ -49,8 +49,9 @@
 //------------------------------------------------------------------------------
 
 /**
- * This method is automatically executed once after the scene is instantiated. 
- * The method is used to create objects to be used within the scene.
+ * Initializes the scene and adds the centered Hello World text field.
+ *
+ * @override
  *
  * @returns {undefined}
  */
@@ -65,8 +66,9 @@
 };
 
 /**
- * This method is automatically executed once per "tick". The method is used for 
- * calculations such as application logic.
+ * Updates the scene each tick. Add game logic here.
+ *
+ * @override
  *
  * @param {number} step Fixed time step.
  *
@@ -77,10 +79,9 @@
 };
 
 /**
- * This method is automatically called once just before the scene ends. Use 
- * the method to reset references and remove objects that no longer need to 
- * exist when the scene is destroyed. The process is performed in order to 
- * avoid memory leaks.
+ * Releases the scene's resources and clears its text field reference.
+ *
+ * @override
  *
  * @returns {undefined}
  */

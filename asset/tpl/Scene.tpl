@@ -11,7 +11,7 @@
  * @class
  * @classdesc
  *
- * Write the scene description here.
+ * Base scene template. Replace this description with the scene's purpose.
  */
 %APP%.%PACKAGE%.%CLASS% = function() {
 

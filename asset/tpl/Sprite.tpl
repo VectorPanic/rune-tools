@@ -17,7 +17,7 @@
  * @class
  * @classdesc
  * 
- * Write the sprite description here.
+ * Base sprite template. Replace this description with the sprite's purpose.
  */
 %APP%.%PACKAGE%.%CLASS% = function(x, y, width, height, resource) {
 
@@ -55,7 +55,7 @@
 //------------------------------------------------------------------------------
 
 /**
- * Initializes the sprite and its animations.
+ * Initializes the sprite and calls its animation setup method.
  *
  * @override
  * @returns {undefined}
@@ -93,7 +93,7 @@
 //------------------------------------------------------------------------------
 
 /**
- * Defines the sprite's animations. Add animation sequences here.
+ * Provides a setup hook for the sprite's animation sequences.
  *
  * @returns {undefined}
  * @private

@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------------
 
 /**
- * Exports the application to the global scope.
+ * Exposes the application namespace on window if it is not already defined.
  */
 if (typeof window !== "undefined") {
     if (typeof window.%APP% === "undefined") {
@@ -12,8 +12,7 @@ if (typeof window !== "undefined") {
 }
 
 /**
- * Install the application to Rune OS. If the application is executed within 
- * Rune OS.
+ * Registers the application with Rune OS when running inside its environment.
  */
 if (typeof window !== "undefined" && typeof window.runeos === "object") {
     window.runeos.install(%APP%);
