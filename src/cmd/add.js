@@ -17,7 +17,11 @@ module.exports = function(args) {
 
     createFile(templates[type], reference);
 
-    print.out('Done.', true);
+    const name = reference.split('.').pop();
+    print.out('Created ' + name + '.js.');
+    print.out('Remember to manually add the file to:');
+    print.out('  - bin-debug/index.html');
+    print.out('  - scripts/shell/build.sh', true);
 };
 
 function isClassReference(reference) {
