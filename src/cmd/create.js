@@ -1,8 +1,8 @@
 module.exports = function(args) {
     
     const aID = /^[a-zA-Z0-9-_]*$/;
-    const dID = /^([a-z]{2,3}).[a-z0-9-]{1,50}$/;
-    const bID = /^[0-9].[0-9].[0-9]$/;
+    const dID = /^([a-z]{2,3})\.[a-z0-9-]{1,50}$/;
+    const bID = /^[0-9]+\.[0-9]+\.[0-9]+$/;
     
     let a = args.a || args.application;
     let d = args.d || args.developer;
